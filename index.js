@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const server = express();
 
@@ -8,5 +10,5 @@ server.listen(PORT, () => {
 });
 
 server.get("/", (req, res) => {
-  res.send({ day: "tueday", date: "06/14/22" });
+  res.send({ day: "tueday", date: process.env.DATE });
 });
